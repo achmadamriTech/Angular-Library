@@ -1,65 +1,36 @@
 <div class="content" role="main">
     <div class="container">
-
-        <div class="card">
-            <div class="card-header">
-                <h4>Daftar Buku</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Daftar Buku</h4>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" style="margin-bottom: 10px;" class="btn btn-primary">Add Data</a>&nbsp;
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Judul Buku</th>
+                                    <th>Pengarang</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let iBuku of buku">
+                                <tr (click)="onSelectBuku(iBuku)">
+                                    <td>{{iBuku.judul}}</td>
+                                    <td>{{ iBuku.pengarang }}</td>
+                                    </tr>
+                            </tbody>
+                            </table>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <a href="#" style="margin-bottom: 10px;" class="btn btn-primary">Add Data</a>&nbsp;
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>ISBN</th>
-                            <th>Nama Buku</th>
-                            <th>Nama Pengarang</th>
-                            <th>Nama Penerbit</th>
-                            <th>Tanggal Terbit</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="row">1</td>
-                            <td>ISBN-08243</td>
-                            <td>Statistika dan Probabilitas</td>
-                            <td>Vicky T</td>
-                            <td>Cv. Penerbit Depok</td>
-                            <td>03 Januari 2012</td>
-                            <td>
-                                <a href="">Edit</a>&nbsp;
-                                <a href="">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">2</td>
-                            <td>ISBN-08243</td>
-                            <td>Statistika dan Probabilitas</td>
-                            <td>Vicky T</td>
-                            <td>Cv. Penerbit Depok</td>
-                            <td>03 Januari 2012</td>
-                            <td>
-                                <a href="">Edit</a>&nbsp;
-                                <a href="">Hapus</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td scope="row">3</td>
-                            <td>ISBN-08243</td>
-                            <td>Statistika dan Probabilitas</td>
-                            <td>Vicky T</td>
-                            <td>Cv. Penerbit Depok</td>
-                            <td>03 Januari 2012</td>
-                            <td>
-                                <a href="">Edit</a>&nbsp;
-                                <a href="">Hapus</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-md-6">
+                <app-buku-detail [buku]="selectedBuku"></app-buku-detail>
             </div>
         </div>
+        <ng-template #bukuKosong>
+            <p>Data Buku Tidak Ada!</p>
+        </ng-template>
     </div>
-   
   </div>

@@ -5,8 +5,9 @@
     line-height: 50px;
     background:#2C3E50;
     color: #fff;
-    position:absolute;
+    position:fixed;
     bottom: 0;
+    display:block;
 }
 
 footer p{

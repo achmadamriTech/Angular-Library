@@ -1,0 +1,39 @@
+<div class="card" *ngIf="buku">
+    <div class="card-header">
+        <h4>Detail Buku</h4>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="">Id</label>
+            <input type="text" class="form-control" [(ngModel)] = "buku.id">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="">ISBN</label><br>
+            <input type="text" class="form-control" [(ngModel)] = "buku.isbn">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="">Pengarang</label>
+            <input type="text" class="form-control" id="txtPengarang" [(ngModel)] = "buku.pengarang" placeholder="Nama Pengarang">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="">Penerbit</label>
+            <input type="text" class="form-control" id="txtPenerbit" [(ngModel)] = "buku.penerbit" placeholder="Nama Penerbit">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="">Tanggal Terbit</label>
+            <input type="date" class="form-control" id="txtTglTerbit" [(ngModel)] = "buku.tglterbit" placeholder="Tanggal Terbit">
+          </div>
+          <br>
+          <div class="d-flex justify-content-between">
+            <button (click)="goBack()" class="btn btn-secondary fw-bold">&lt;</button>
+            <div class="">
+              <button class="btn btn-success" (click)="updateBuku()">Update</button>&nbsp;
+              <!-- <button class="btn btn-danger">Delete</button> -->
+            </div>
+          </div>
+    </div>
+</div>
