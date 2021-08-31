@@ -1,0 +1,17 @@
+<div class="content" role="main">
+    <h4>Halaman Salam</h4>
+    
+    <h4>Pipes</h4>
+    <div>{{ title | uppercase}}</div>
+    <div>{{ title | lowercase}}</div>
+    <div>{{ todayDate }}</div>
+    <div>{{ todayDate | date:'d/M/y' }}</div>
+
+    <!-- <h4>ngFor directive</h4>
+    <ul>
+      <li *ngFor="let month of months; let i=index" >
+        <span *ngIf="currMonth === i; else conFalse "><b>{{month}}</b></span> 
+        <ng-template #conFalse>{{month}}</ng-template>
+      </li>
+    </ul> -->
+  </div>
