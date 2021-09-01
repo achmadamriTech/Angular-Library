@@ -1,0 +1,49 @@
+<div class="card" *ngIf="pelanggan">
+  <div class="card-header">
+    <h4>Detail Pelanggan</h4>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+        <label for="">Id</label>
+        <input type="text" class="form-control" [(ngModel)] = "pelanggan.id">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="">Kode Pelanggan</label>
+        <input type="text" class="form-control" [(ngModel)] = "pelanggan.kodepel">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="">Nama</label><br>
+        <input type="text" class="form-control" id="txtNama" [(ngModel)] = "pelanggan.nama">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" class="form-control" id="txtEmail" [(ngModel)] = "pelanggan.email" placeholder="Email">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="">Alamat</label>
+        <input type="text" class="form-control" id="txtAlamat" [(ngModel)] = "pelanggan.alamat" placeholder="Nama Penerbit">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="">Jenis Kelamin</label>
+        <input type="text" class="form-control" id="txtJk" [(ngModel)] = "pelanggan.jk" placeholder="Tanggal Terbit">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="">Telephone</label>
+        <input type="text" class="form-control" id="txtTelp" [(ngModel)] = "pelanggan.telp" placeholder="Tanggal Terbit">
+      </div>
+      <br>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-secondary fw-bold" (click) = "goBack()" >&lt;</button>
+        <div class="">
+          <button class="btn btn-success" (click) = "updatePelanggan()">Update</button>&nbsp;
+          <!-- <button class="btn btn-danger">Delete</button> -->
+        </div>
+      </div>
+</div>
+</div>
