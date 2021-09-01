@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Pelanggan } from 'src/app/model/Pelanggan';
+import { MessageService } from 'src/app/service/message/message.service';
 import { PelangganService } from 'src/app/service/pelanggan/pelanggan.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class PelangganComponent implements OnInit {
   selectedPelanggan?: Pelanggan;
 
   constructor(
-    private pelangganService: PelangganService
+    private pelangganService: PelangganService,
+    private msgSvc: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,11 @@ export class PelangganComponent implements OnInit {
 
   onSelectPelanggan(pelanggan: Pelanggan){
     this.selectedPelanggan = pelanggan;
+  }
+
+  delete(pelangganId: any): void{
+    this.msgSvc.add("Deleting pelanggan with Id=" + pelangganId);
+    this.pelangganService.deletePelanggan(pelangganId).subscribe();
   }
 
 }

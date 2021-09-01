@@ -1,5 +1,3 @@
-<div class="content" role="main">
-    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
@@ -7,17 +5,23 @@
                         <h4>Daftar Pelanggan</h4>
                     </div>
                     <div class="card-body">
+                        <a routerLink="/pelangganForm" class="btn btn-primary">Add Data</a><br><br>
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>Kode Pelanggan</th>
                                     <th>Nama</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody *ngFor="let iPelanggan of pelanggan">
-                                <tr (click)="onSelectPelanggan(iPelanggan)">
+                                <tr>
                                     <td>{{ iPelanggan.kodepel }}</td>
                                     <td>{{ iPelanggan.nama }}</td>
+                                    <td>
+                                        <button (click)="onSelectPelanggan(iPelanggan)" class="btn btn-info"><i class="fa fa-pencil"></i></button>&nbsp;
+                                        <button (click)="delete(iPelanggan)" class="btn btn-danger"><i class="fa fa-close"></i></button>
+                                    </td>
                                     </tr>
                             </tbody>
                             </table>
@@ -28,5 +32,3 @@
                 <app-pelanggan-detail [pelanggan]="selectedPelanggan"></app-pelanggan-detail>
             </div>
         </div>
-    </div>
-  </div>

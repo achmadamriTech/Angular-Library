@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Buku } from 'src/app/model/Buku';
 import { BukuService } from 'src/app/service/buku/buku.service';
+import { MessageService } from 'src/app/service/message/message.service';
 
 @Component({
   selector: 'app-buku',
@@ -15,7 +16,8 @@ export class BukuComponent implements OnInit {
   selectedBuku?: Buku;
 
   constructor(
-    private bukuService : BukuService
+    private bukuService : BukuService,
+    private msgSvc: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -31,5 +33,10 @@ export class BukuComponent implements OnInit {
 
     onSelectBuku(buku: Buku){
       this.selectedBuku = buku;
+    }
+
+    delete(bukuId: any): void{
+      this.msgSvc.add("Deleting buku with Id=" + bukuId);
+      this.bukuService.deleteBuku(bukuId).subscribe();
     }
 }

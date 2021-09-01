@@ -1,0 +1,48 @@
+<div class="content" role="main">
+    <div class="container">
+       <div class="card">
+           <div class="card-header">
+            <h4>Form Data Pelanggan</h4>
+           </div>
+           <div class="card-body">
+            <form #formPelanggan="ngForm" (ngSubmit)="save(formPelanggan.value)">
+                <div class="form-group">
+                  <label>Kode Pelanggan: </label>
+                  <input type="text" class="form-control" name="kodepel" id="txtKodePel" placeholder="Masukkan Kode Pelanggan" ngModel>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Nama: </label>
+                    <input type="text" class="form-control" name="nama" id="txtNama" placeholder="Masukkan Nama Pelanggan" required ngModel >
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="">Alamat: </label>
+                    <input type="text" class="form-control" name="alamat" id="txtAlamat" placeholder="Masukkan Alamat Pelanggan" required ngModel>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="">Telephone: </label>
+                    <input type="text" class="form-control" name="telp" id="txtTelp" placeholder="Masukkan No Telephone" required ngModel>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <select class="form-control" name="jk" ngModel>
+                      <option value="">-- Pilih Jenis Kelamin --</option>
+                      <option value="L" >Laki-Laki</option>
+                      <option value="P" >Perempuan</option>
+                    </select>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="">Email: </label>
+                    <input type="email" class="form-control" name="email" id="txtUserId" placeholder="Masukkan Nomor Id User" ngModel>
+                  </div>
+                  <br>
+                    <button type="submit" class="btn btn-success btn-block">Save Data</button>
+            </form>
+           </div>
+       </div>
+    </div>
+  </div>

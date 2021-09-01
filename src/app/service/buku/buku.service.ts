@@ -51,5 +51,12 @@ export class BukuService {
     )
   }
 
+  deleteBuku(buku: Buku): Observable<any>{
+    const svcUrl = this.svcUrl + buku.id ;
 
+    return this.httpClient.delete(svcUrl).pipe(
+      tap((result) => this.msgSvc.add('BukuService.deleteBuku(): Buku Berhasil di Hapus')),
+      catchError(this.msgSvc.handleError<Buku[]>('deleteBuku() Failed'))
+    )
+  }
 }

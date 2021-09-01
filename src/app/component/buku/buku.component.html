@@ -1,5 +1,3 @@
-<div class="content" role="main">
-    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
@@ -13,13 +11,17 @@
                                 <tr>
                                     <th>Judul Buku</th>
                                     <th>Pengarang</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody *ngFor="let iBuku of buku">
                                 <tr (click)="onSelectBuku(iBuku)">
                                     <td>{{iBuku.judul}}</td>
                                     <td>{{ iBuku.pengarang }}</td>
-                                    </tr>
+                                    <td>
+                                    <button (click)="delete(iBuku)" class="btn btn-danger"><i class="fa fa-close"></i></button>
+                                    </td>
+                                </tr>
                             </tbody>
                             </table>
                     </div>
@@ -32,5 +34,3 @@
         <ng-template #bukuKosong>
             <p>Data Buku Tidak Ada!</p>
         </ng-template>
-    </div>
-  </div>
