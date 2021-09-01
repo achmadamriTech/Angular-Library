@@ -5,6 +5,7 @@ import { catchError, tap} from 'rxjs/operators';
 
 import {Buku} from "src/app/model/Buku";
 import { bukuSample } from 'src/app/buku-sample';
+import { MessageService } from 'src/app/service/message/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ import { bukuSample } from 'src/app/buku-sample';
 export class BukuService {
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    public msgSvc: MessageService
   ) { }
 
   buku: Buku[] = bukuSample;
@@ -36,7 +38,16 @@ export class BukuService {
     const svcUrl = this.svcUrl + buku.id;
 
     return this.httpClient.put(svcUrl, buku, this.httpOptions).pipe(
-      tap((result) => console.log('BukuService.updateBuku(): Buku Berhasil di Update'))
+      tap((result) => this.msgSvc.add('BukuService.updateBuku(): Buku Berhasil di Update')),
+      catchError(this.msgSvc.handleError<Buku[]>('updateBuku Failed'))
+    )
+  }
+
+  addBuku(buku: Buku): Observable<any>{
+
+    return this.httpClient.post(this.svcUrl, buku, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('BukuService.addBuku(): Buku Berhasil di Tambah')),
+      catchError(this.msgSvc.handleError<Buku[]>('addBuku() Failed'))
     )
   }
 

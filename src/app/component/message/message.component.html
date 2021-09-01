@@ -1,0 +1,10 @@
+  <div class="content" role="main">
+    <div class="container">
+        <div class="alert alert-dismissible alert-primary" *ngIf="msgSvc.messages.length">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="msgSvc.clear()"></button>
+            <strong *ngFor="let message of msgSvc.messages">
+                {{message}}<br><br>
+            </strong>
+          </div>
+    </div>
+  </div>

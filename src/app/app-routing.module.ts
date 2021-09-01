@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BukuNewComponent } from './component/buku/buku-new.component';
 import { BukuComponent } from './component/buku/buku.component';
 import { PelangganComponent } from './component/pelanggan/pelanggan.component';
 import { SalamComponent } from './component/salam/salam.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   {path:"", component:SalamComponent},
   {path:"buku", component:BukuComponent},
   {path:"pelanggan", component:PelangganComponent},
-  {path:"sewa", component:SewaComponent}
+  {path:"sewa", component:SewaComponent},
+  {path:"bukuForm", component:BukuNewComponent}
 ];
 
 @NgModule({

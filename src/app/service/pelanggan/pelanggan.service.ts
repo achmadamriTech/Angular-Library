@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError, tap} from 'rxjs/operators';
 
 import {Pelanggan} from 'src/app/model/Pelanggan';
+import { MessageService } from '../message/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import {Pelanggan} from 'src/app/model/Pelanggan';
 export class PelangganService {
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private msgSvc: MessageService
   ) { }
   
   svcUrl = 'http://localhost:8888/pelanggan/';
@@ -30,7 +32,8 @@ export class PelangganService {
     const svcUrl = this.svcUrl + pelanggan.id;
 
     return this.httpClient.put(svcUrl, pelanggan, this.httpOptions).pipe(
-      tap((result) => console.log('PelangganService.updatePelanggan(): Pelanggan Berhasil diUpdate'))
+      tap((result) => this.msgSvc.add('PelangganService.updatePelanggan(): Pelanggan Berhasil di Update')),
+      catchError(this.msgSvc.handleError<Pelanggan[]>('updatePelanggan Failed'))
     )
   }
 }

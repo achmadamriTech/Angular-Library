@@ -1,0 +1,44 @@
+<div class="content" role="main">
+    <div class="container">
+       <div class="card">
+           <div class="card-header">
+            <h4>Form Data Buku</h4>
+           </div>
+           <div class="card-body">
+            <form #formBuku="ngForm" (ngSubmit)="save(formBuku.value)">
+                <div class="form-group">
+                  <label>Judul: </label>
+                  <input type="text" class="form-control" name="judul" id="txtJudul" placeholder="Masukkan Nama Judul" ngModel>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="">Pengarang: </label>
+                    <input type="text" class="form-control" name="pengarang" id="txtPengarang" placeholder="Masukkan Nama Pengarang" required ngModel >
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="">Tanggal terbit: </label>
+                    <input type="date" class="form-control" name="tglterbit" id="txtTglTerbit" placeholder="Masukkan Tanggal Terbit" required ngModel>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="">Penerbit: </label>
+                    <input type="text" class="form-control" name="penerbit" id="txtPenerbit" placeholder="Masukkan Nama Penerbit" required ngModel>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="">ISBN: </label>
+                    <input type="text" class="form-control" name="isbn" id="txtIsbn" placeholder="Masukkan No ISBN" required ngModel >
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="">UserId: </label>
+                    <input type="number" class="form-control" name="userid" id="txtUserId" placeholder="Masukkan Nomor Id User" ngModel>
+                  </div>
+                  <br>
+                    <button type="submit" class="btn btn-success btn-block">Save Data</button>
+            </form>
+           </div>
+       </div>
+    </div>
+  </div>

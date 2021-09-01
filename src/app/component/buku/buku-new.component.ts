@@ -1,0 +1,27 @@
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Buku } from 'src/app/model/Buku';
+import { BukuService } from 'src/app/service/buku/buku.service';
+
+@Component({
+  selector: 'app-buku-new',
+  templateUrl: './buku-new.component.html',
+  styleUrls: ['./buku-new.component.css']
+})
+export class BukuNewComponent implements OnInit {
+  @Input() buku?: Buku;
+  constructor(
+    private bukuService: BukuService
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  // save Buku
+  save(buku: Buku): void {
+    console.log("bukuForm", buku);
+    alert('Saving Buku...');
+    this.bukuService.addBuku(buku).subscribe();
+  }
+
+}
