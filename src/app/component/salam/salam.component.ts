@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-salam',
@@ -13,6 +14,14 @@ export class SalamComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  sayHello(name: String): void{
+    alert("Welcome " + name);  
+  }
+
+  alertMsg(msg: String): void{
+    alert(msg); 
+  }
 }

@@ -1,1 +1,37 @@
-<p>sewa works!</p>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h4>Daftar Sewa</h4>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-primary">Add Data</a><br><br>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nama Penyewa</th>
+                            <th>Judul Buku</th>
+                            <th>Tanggal Sewa</th>
+                            <th>Lama Sewa</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let iSewa of sewa">
+                        <tr>
+                            <td>{{ iSewa.nama }}</td>
+                            <td>{{ iSewa.judul }}</td>
+                            <td>{{ iSewa.tglsewa | date:'d/M/y'}}</td>
+                            <td>{{ iSewa.lamasewa}}&nbsp;{{'Hari'}}</td>
+                            <!-- <td>
+                                <button (click)="onSelectPelanggan(iPelanggan)" class="btn btn-info"><i class="fa fa-pencil"></i></button>&nbsp;
+                                <button (click)="delete(iPelanggan)" class="btn btn-danger"><i class="fa fa-close"></i></button>
+                            </td> -->
+                            </tr>
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- <app-pelanggan-detail [pelanggan]="selectedPelanggan"></app-pelanggan-detail> -->
+    </div>
+</div>

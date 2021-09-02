@@ -18,6 +18,7 @@ export class BukuService {
   ) { }
 
   buku: Buku[] = bukuSample;
+
   svcUrl = 'http://localhost:8888/buku/';
 
   private httpOptions = {
@@ -58,5 +59,9 @@ export class BukuService {
       tap((result) => this.msgSvc.add('BukuService.deleteBuku(): Buku Berhasil di Hapus')),
       catchError(this.msgSvc.handleError<Buku[]>('deleteBuku() Failed'))
     )
+  }
+
+  manggil(name: String): void{
+    console.log("Nama Muncul");
   }
 }

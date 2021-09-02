@@ -39,4 +39,8 @@ export class BukuComponent implements OnInit {
       this.msgSvc.add("Deleting buku with Id=" + bukuId);
       this.bukuService.deleteBuku(bukuId).subscribe();
     }
+
+    sayHello(name: String): void {
+      alert('Welcome'+ name);
+    }
 }

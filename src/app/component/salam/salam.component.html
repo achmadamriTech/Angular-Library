@@ -6,5 +6,7 @@
     <div>{{ title | lowercase}}</div>
     <div>{{ todayDate }}</div>
     <div>{{ todayDate | date:'d/M/y' }}</div>
-  
+    <div>{{ "Selamat Datang" | uppercase }}</div>
+    <button (click)="sayHello('Amri')">Say Hello</button>
+    <button (click)="alertMsg('Hello World')">Say Hello 1 </button>
   </div>
