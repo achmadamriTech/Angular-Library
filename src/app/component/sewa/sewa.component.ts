@@ -29,4 +29,9 @@ export class SewaComponent implements OnInit {
   });
 }
 
+delete(sewaId: any): void{
+  this.msgSvc.add("Deleting Data Sewa with Id=" + sewaId);
+  this.sewaService.deleteSewa(sewaId).subscribe();
+}
+
 }

@@ -5,6 +5,7 @@ import { BukuComponent } from './component/buku/buku.component';
 import { PelangganNewComponent } from './component/pelanggan/pelanggan-new.component';
 import { PelangganComponent } from './component/pelanggan/pelanggan.component';
 import { SalamComponent } from './component/salam/salam.component';
+import { SewaNewComponent } from './component/sewa/sewa-new.component';
 import { SewaComponent } from './component/sewa/sewa.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:"pelanggan", component:PelangganComponent},
   {path:"sewa", component:SewaComponent},
   {path:"bukuForm", component:BukuNewComponent},
-  {path:"pelangganForm", component:PelangganNewComponent}
+  {path:"pelangganForm", component:PelangganNewComponent},
+  {path:"sewaForm", component:SewaNewComponent}
 ];
 
 @NgModule({

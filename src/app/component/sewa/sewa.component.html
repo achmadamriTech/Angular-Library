@@ -5,7 +5,7 @@
                 <h4>Daftar Sewa</h4>
             </div>
             <div class="card-body">
-                <a class="btn btn-primary">Add Data</a><br><br>
+                <a routerLink="/sewaForm" class="btn btn-primary">Add Data</a><br><br>
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
@@ -13,6 +13,7 @@
                             <th>Judul Buku</th>
                             <th>Tanggal Sewa</th>
                             <th>Lama Sewa</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let iSewa of sewa">
@@ -21,10 +22,10 @@
                             <td>{{ iSewa.judul }}</td>
                             <td>{{ iSewa.tglsewa | date:'d/M/y'}}</td>
                             <td>{{ iSewa.lamasewa}}&nbsp;{{'Hari'}}</td>
-                            <!-- <td>
-                                <button (click)="onSelectPelanggan(iPelanggan)" class="btn btn-info"><i class="fa fa-pencil"></i></button>&nbsp;
-                                <button (click)="delete(iPelanggan)" class="btn btn-danger"><i class="fa fa-close"></i></button>
-                            </td> -->
+                            <td>
+                                <!-- <button (click)="onSelectPelanggan(iPelanggan)" class="btn btn-info"><i class="fa fa-pencil"></i></button>&nbsp; -->
+                                <button (click)="delete(iSewa)" class="btn btn-danger"><i class="fa fa-close"></i></button>
+                            </td>
                             </tr>
                     </tbody>
                     </table>

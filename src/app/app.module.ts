@@ -16,6 +16,7 @@ import { PelangganDetailComponent} from './component/pelanggan/pelanggan-detail.
 import { BukuNewComponent } from './component/buku/buku-new.component';
 import { MessageComponent } from './component/message/message.component';
 import { PelangganNewComponent } from './component/pelanggan/pelanggan-new.component';
+import { SewaNewComponent } from './component/sewa/sewa-new.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PelangganNewComponent } from './component/pelanggan/pelanggan-new.compo
     PelangganDetailComponent,
     BukuNewComponent,
     MessageComponent,
-    PelangganNewComponent
+    PelangganNewComponent,
+    SewaNewComponent
   ],
   imports: [
     BrowserModule,

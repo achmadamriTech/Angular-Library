@@ -1,0 +1,46 @@
+<div class="content" role="main">
+    <div class="container">
+       <div class="card">
+           <div class="card-header">
+            <h4>Form Data Sewa</h4>
+           </div>
+           <div class="card-body">
+            <form #formSewa="ngForm" (ngSubmit)="save(formSewa.value)">
+                  <div class="form-group">
+                    <label>Judul Buku</label>
+                    <select class="form-control" name="isbn" ngModel>
+                        <option *ngFor="let iBuku of buku" value='{{iBuku.isbn}}'>{{iBuku.isbn}} - {{iBuku.judul}} - {{iBuku.pengarang}}</option>
+                    </select>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label>Nama Penyewa</label>
+                    <select class="form-control" name="pelangganid" *ngIf="pelanggan" ngModel>
+                        <option *ngFor="let iPelanggan of pelanggan" value='{{iPelanggan.id}}'>{{iPelanggan.kodepel}} - {{iPelanggan.nama}}</option>  
+                    </select>
+                    <ng-template #pelangganKosong>
+                        <p>Data Pelanggan Tidak Ada</p>
+                      </ng-template>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label>Tanggal Sewa: </label>
+                    <input type="date" class="form-control" name="tglsewa" id="txtTglSewa" ngModel>
+                  </div>
+                    <br>
+                    <div class="form-group">
+                        <label>Lama Sewa: </label>
+                        <input type="text" class="form-control" name="lamasewa" id="txtLamaSewa" ngModel>
+                      </div>
+                        <br>
+                        <div class="form-group">
+                            <label>Keterangan: </label>
+                            <input type="text" class="form-control" name="keterangan" id="txtKeterangan" ngModel>
+                          </div>
+                            <br>
+                    <button type="submit" class="btn btn-success btn-block">Save Data</button>
+            </form>
+           </div>
+       </div>
+    </div>
+  </div>
