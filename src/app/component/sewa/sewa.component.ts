@@ -12,6 +12,8 @@ import { MessageService } from 'src/app/service/message/message.service';
 export class SewaComponent implements OnInit {
   sewa: Sewa[] = [];
 
+  selectedSewa?: Sewa;
+
   constructor(
     private sewaService: SewaService,
     private msgSvc: MessageService
@@ -32,6 +34,10 @@ export class SewaComponent implements OnInit {
 delete(sewaId: any): void{
   this.msgSvc.add("Deleting Data Sewa with Id=" + sewaId);
   this.sewaService.deleteSewa(sewaId).subscribe();
+}
+
+onSelectSewa(sewa: Sewa){
+  this.selectedSewa = sewa;
 }
 
 }

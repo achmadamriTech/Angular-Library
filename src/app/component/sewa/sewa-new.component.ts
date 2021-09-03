@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+
 import { Buku } from 'src/app/model/Buku';
 import { Pelanggan } from 'src/app/model/Pelanggan';
 
@@ -20,7 +22,8 @@ export class SewaNewComponent implements OnInit {
   constructor(
     private bukuService: BukuService,
     private pelangganService: PelangganService,
-    private sewaService: SewaService
+    private sewaService: SewaService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -46,6 +49,7 @@ save(sewa: Sewa): void {
   console.log("formSewa", sewa);
   alert('Saving Data Buku...');
   this.sewaService.addSewa(sewa).subscribe();
+  this.location.back();
 }
 
 }

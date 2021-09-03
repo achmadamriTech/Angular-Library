@@ -1,0 +1,44 @@
+<div class="card" *ngIf="sewa">
+    <div class="card-header">
+      <h4>Detail Sewa</h4>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+          <label for="">Id</label>
+          <input type="text" class="form-control" [(ngModel)] = "sewa.id">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Judul Buku</label>
+          <select class="form-control" name="isbn" [(ngModel)] = "sewa.isbn">
+              <option *ngFor="let iBuku of buku" value='{{iBuku.isbn}}'>{{iBuku.isbn}} - {{iBuku.judul}} - {{iBuku.pengarang}}</option>
+          </select>
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Nama Penyewa</label>
+          <select class="form-control" name="pelangganid" *ngIf="pelanggan" [(ngModel)] = "sewa.pelangganid">
+              <option *ngFor="let iPelanggan of pelanggan" value='{{iPelanggan.id}}'>{{iPelanggan.kodepel}} - {{iPelanggan.nama}}</option>  
+          </select>
+          <ng-template #pelangganKosong>
+              <p>Data Pelanggan Tidak Ada</p>
+            </ng-template>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="">Tanggal Sewa</label>
+            <input type="date" class="form-control" [(ngModel)] = "sewa.tglsewa">
+          </div>
+          <br>
+        <div class="form-group">
+            <label for="">Lama Sewa</label>
+            <input type="text" class="form-control" [(ngModel)] = "sewa.lamasewa">
+          </div>
+          <br>
+        <div class="d-flex justify-content-between">
+          <button (click)="goBack()" class="btn btn-secondary fw-bold">&lt;</button>
+          <div class="">
+           <button class="btn btn-success"  (click) = "updateSewa()">Update</button>
+        </div>
+</div>
+</div>

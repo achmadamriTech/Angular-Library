@@ -60,8 +60,4 @@ export class BukuService {
       catchError(this.msgSvc.handleError<Buku[]>('deleteBuku() Failed'))
     )
   }
-
-  manggil(name: String): void{
-    console.log("Nama Muncul");
-  }
 }

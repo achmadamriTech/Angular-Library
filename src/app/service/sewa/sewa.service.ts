@@ -47,4 +47,13 @@ export class SewaService {
     )
   }
 
+  updateSewa(sewa: Sewa): Observable<any>{
+    const svcUrls = this.svcUrls + sewa.id;
+
+    return this.httpClient.put(svcUrls, sewa, this.httpOptions).pipe(
+      tap((result) => this.msgSvc.add('sewaService.updateSewa(): Data Sewa Berhasil di Update')),
+      catchError(this.msgSvc.handleError<Sewa[]>('updateSewa Failed'))
+    )
+  }
+
 }

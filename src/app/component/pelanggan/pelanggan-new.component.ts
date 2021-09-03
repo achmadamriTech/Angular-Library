@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 
 import { Pelanggan } from 'src/app/model/Pelanggan';
@@ -12,7 +13,8 @@ import { PelangganService } from 'src/app/service/pelanggan/pelanggan.service';
 export class PelangganNewComponent implements OnInit {
   @Input() pelanggan?: Pelanggan;
   constructor(
-    private pelangganService: PelangganService
+    private pelangganService: PelangganService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -22,5 +24,6 @@ export class PelangganNewComponent implements OnInit {
     console.log("formPelanggan", pelanggan);
     alert('Saving Pelanggan...');
     this.pelangganService.addPelanggan(pelanggan).subscribe();
+    this.location.back();
   }
 }
