@@ -26,5 +26,4 @@ export class BukuNewComponent implements OnInit {
     this.bukuService.addBuku(buku).subscribe();
     this.location.back();
   }
-
 }
